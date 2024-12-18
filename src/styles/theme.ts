@@ -21,11 +21,16 @@ const theme: DefaultTheme = {
       small: '12px',
       medium: '16px',
       large: '20px',
+      xLarge: '24px',
     },
-    fontWeight: {
+    primaryKrWeight: {
+      regular: '400',
+      semiBold: '600',
+    },
+    secondaryEngWeight: {
       light: '300',
-      normal: '400',
-      bold: '700',
+      regular: '400',
+      bold: '600',
     },
   },
 };

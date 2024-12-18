@@ -1,22 +1,45 @@
-import React from 'react';
 import styled from 'styled-components';
-import { Image, ImageContainer } from './CommonStyles';
-import logo from '../assets/HOD.png';
+import Header from './Header';
+import MainBanner from './MainBanner';
+import MenuBanner from './MenuBanner';
 
 const Home = () => {
   return (
     <HomeContainer>
-      <ImageContainer width="30%">
-        <Image src={logo} />
-      </ImageContainer>
+      {/* header */}
+      <Header />
+      {/* main banner */}
+      <MainBanner />
+      {/* menu banner */}
+      <MenuBanner />
     </HomeContainer>
   );
 };
 
 const HomeContainer = styled.div`
-  padding: 100px;
   margin: 0 auto;
-  text-align: center;
 `;
+
+// practice
+
+// interface TestImageContainerProps {
+//   image?: string;
+//   hoverImage?: string;
+// }
+
+// const TestImageContainer = styled.div<TestImageContainerProps>`
+//   width: 50%;
+//   height: 500px;
+//   margin: 0 auto;
+//   margin-top: 50px;
+//   background-image: url(${(props) => props.image});
+//   background-size: cover;
+//   background-position: center;
+//   transition: background-image 0.3s;
+
+//   &:hover {
+//     background-image: url(${(props) => props.hoverImage});
+//   }
+// `;
 
 export default Home;

@@ -19,10 +19,15 @@ declare module 'styled-components' {
         small: string;
         medium: string;
         large: string;
+        xLarge: string;
       };
-      fontWeight: {
+      primaryKrWeight: {
+        regular: string;
+        semiBold: string;
+      };
+      secondaryEngWeight: {
         light: string;
-        normal: string;
+        regular: string;
         bold: string;
       };
     };

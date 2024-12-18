@@ -14,9 +14,6 @@ function App() {
   );
 }
 
-const MainContainer = styled.div`
-  padding: 20px;
-  text-align: center;
-`;
+const MainContainer = styled.div``;
 
 export default App;
