@@ -3,34 +3,31 @@ import exhibitionBg from '../assets/Images/Home_Img/EXHIBITION.jpg';
 import newsBg from '../assets/Images/Home_Img/NEWS.jpg';
 import brandsBg from '../assets/Images/Home_Img/BRANDS.jpg';
 
-// hover시, 이미지 커지는 거 구현하기
-// hover시, 간단설명 텍스트 보이게끔 구현하기
-
 const MenuBanner = () => {
   return (
     <MenuBannerContainer>
       <MenuBannerBox left="0" top="0" width="720px" height="720px">
         <MenuBannerImage backgroundImage={exhibitionBg} />
-        <TitleBox height="720px">
-          <span>description text</span>
+        <Title height="720px">
+          <span>전시회 자세히 보기</span>
           <p>exhibition</p>
-        </TitleBox>
+        </Title>
         <OpacityBox left="0" top="0" width="720px" height="720px" />
       </MenuBannerBox>
       <MenuBannerBox left="720px" top="0" width="720px" height="360px">
         <MenuBannerImage backgroundImage={newsBg} />
-        <TitleBox height="360px">
-          <span>description text</span>
+        <Title height="360px">
+          <span>최신 소식 확인하기</span>
           <p>news</p>
-        </TitleBox>
+        </Title>
         <OpacityBox left="720px" top="0" width="720px" height="360px" />
       </MenuBannerBox>
       <MenuBannerBox left="720px" bottom="0" width="720px" height="360px">
         <MenuBannerImage backgroundImage={brandsBg} />
-        <TitleBox height="360px">
-          <span>description text</span>
+        <Title height="360px">
+          <span>추천 브랜드 살펴보기</span>
           <p>brands</p>
-        </TitleBox>
+        </Title>
         <OpacityBox left="720px" bottom="0" width="720px" height="360px" />
       </MenuBannerBox>
     </MenuBannerContainer>
@@ -78,7 +75,7 @@ const MenuBannerImage = styled.div<MenuBannerBoxProps>`
   transition: transform 0.3s ease;
 `;
 
-const TitleBox = styled.div<MenuBannerBoxProps>`
+const Title = styled.div<MenuBannerBoxProps>`
   position: relative;
   z-index: 1;
 

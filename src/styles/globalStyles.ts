@@ -8,7 +8,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: ${({ theme }) => theme.fonts.primaryKr};
+    font-family: ${({ theme }) => theme.fonts.secondaryEng};
     background-color: ${({ theme }) => theme.colors.primaryWhite};
     padding: 0;
     margin: 0 auto;

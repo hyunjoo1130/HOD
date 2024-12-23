@@ -25,7 +25,6 @@ const Header = () => {
 };
 
 const HeaderContainer = styled.header`
-  font-family: ${({ theme }) => theme.fonts.secondaryEng};
   font-weight: ${({ theme }) => theme.fonts.secondaryEngWeight.light};
   text-transform: uppercase;
   padding: 20px;

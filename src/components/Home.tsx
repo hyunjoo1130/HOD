@@ -2,6 +2,11 @@ import styled from 'styled-components';
 import Header from './Header';
 import MainBanner from './MainBanner';
 import MenuBanner from './MenuBanner';
+import Question from './Question';
+import Footer from './Footer';
+import VirtualExperience from './VirtualExperience';
+import TopView from './TopView';
+import BrandIntro from './BrandIntro';
 
 const Home = () => {
   return (
@@ -12,6 +17,16 @@ const Home = () => {
       <MainBanner />
       {/* menu banner */}
       <MenuBanner />
+      {/* ask a question */}
+      <Question />
+      {/* virtual experience */}
+      <VirtualExperience />
+      {/* top view */}
+      <TopView />
+      {/* brand intro */}
+      <BrandIntro />
+      {/* footer  */}
+      <Footer />
     </HomeContainer>
   );
 };
@@ -19,27 +34,5 @@ const Home = () => {
 const HomeContainer = styled.div`
   margin: 0 auto;
 `;
-
-// practice
-
-// interface TestImageContainerProps {
-//   image?: string;
-//   hoverImage?: string;
-// }
-
-// const TestImageContainer = styled.div<TestImageContainerProps>`
-//   width: 50%;
-//   height: 500px;
-//   margin: 0 auto;
-//   margin-top: 50px;
-//   background-image: url(${(props) => props.image});
-//   background-size: cover;
-//   background-position: center;
-//   transition: background-image 0.3s;
-
-//   &:hover {
-//     background-image: url(${(props) => props.hoverImage});
-//   }
-// `;
 
 export default Home;

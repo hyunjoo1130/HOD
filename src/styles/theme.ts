@@ -21,7 +21,7 @@ const theme: DefaultTheme = {
       small: '12px',
       medium: '16px',
       large: '20px',
-      xLarge: '24px',
+      xLarge: '25px',
     },
     primaryKrWeight: {
       regular: '400',
