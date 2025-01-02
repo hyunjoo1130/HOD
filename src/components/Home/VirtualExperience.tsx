@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import threeDImg from '../assets/Images/Home_Img/VIRTUAL CERAMIC.png';
-import { ImageContainer, MoreButton } from './CommonStyles';
-import moreArrow from '../assets/icons/MORE ARROW.png';
+import threeDImg from '../../assets/Images/Home_Img/VIRTUAL CERAMIC.png';
+import { ImageContainer, MoreButton } from '../CommonStyles';
+import moreArrow from '../../assets/icons/MORE ARROW.png';
 
 const VirtualExperience = () => {
   return (
@@ -62,10 +62,9 @@ const Titles = styled.div`
   }
 
   h1 {
-    font-family: ${({ theme }) => theme.fonts.secondaryEng};
     font-weight: ${({ theme }) => theme.fonts.secondaryEngWeight.regular};
+    font-size: ${({ theme }) => theme.fonts.fontSize.xxLarge};
     text-transform: uppercase;
-    font-size: 50px;
     margin: 10px 0 20px;
   }
 `;

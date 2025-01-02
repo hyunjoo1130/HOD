@@ -20,8 +20,9 @@ const theme: DefaultTheme = {
     fontSize: {
       small: '12px',
       medium: '16px',
-      large: '20px',
-      xLarge: '25px',
+      large: '25px',
+      xLarge: '30px',
+      xxLarge: '50px',
     },
     primaryKrWeight: {
       regular: '400',

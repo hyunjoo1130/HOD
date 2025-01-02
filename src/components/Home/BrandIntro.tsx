@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ImageContainer, MoreButton } from './CommonStyles';
-import image from '../assets/Images/Home_Img/BRAND INTRO.jpg';
-import moreArrow from '../assets/icons/MORE ARROW.png';
+import { ImageContainer, MoreButton } from '../CommonStyles';
+import image from '../../assets/Images/Home_Img/BRAND INTRO.jpg';
+import moreArrow from '../../assets/icons/MORE ARROW.png';
 
 const BrandIntro = () => {
   return (
@@ -31,7 +31,7 @@ const BrandIntro = () => {
         </MoreButton>
       </TextContent>
       <ImageContainer width="50%" style={{ textAlign: 'center' }}>
-        <img width="80%" src={image} />
+        <img width="90%" src={image} />
       </ImageContainer>
     </BrandIntroContainer>
   );
@@ -48,8 +48,9 @@ const BrandIntroContainer = styled.div`
 const TextContent = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 50%;
+  padding: 60px 30px;
 `;
 
 const Title = styled.div`
@@ -58,10 +59,9 @@ const Title = styled.div`
   align-items: end;
 
   h1 {
-    font-family: ${({ theme }) => theme.fonts.secondaryEng};
     font-weight: ${({ theme }) => theme.fonts.secondaryEngWeight.regular};
+    font-size: ${({ theme }) => theme.fonts.fontSize.xxLarge};
     text-transform: uppercase;
-    font-size: 50px;
   }
 
   p {

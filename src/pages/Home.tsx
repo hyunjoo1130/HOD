@@ -1,18 +1,14 @@
 import styled from 'styled-components';
-import Header from './Header';
-import MainBanner from './MainBanner';
-import MenuBanner from './MenuBanner';
-import Question from './Question';
-import Footer from './Footer';
-import VirtualExperience from './VirtualExperience';
-import TopView from './TopView';
-import BrandIntro from './BrandIntro';
+import MainBanner from '../components/Home/MainBanner';
+import MenuBanner from '../components/Home/MenuBanner';
+import Question from '../components/Home/Question';
+import VirtualExperience from '../components/Home/VirtualExperience';
+import TopView from '../components/Home/TopView';
+import BrandIntro from '../components/Home/BrandIntro';
 
 const Home = () => {
   return (
     <HomeContainer>
-      {/* header */}
-      <Header />
       {/* main banner */}
       <MainBanner />
       {/* menu banner */}
@@ -25,8 +21,6 @@ const Home = () => {
       <TopView />
       {/* brand intro */}
       <BrandIntro />
-      {/* footer  */}
-      <Footer />
     </HomeContainer>
   );
 };

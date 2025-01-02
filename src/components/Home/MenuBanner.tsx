@@ -1,34 +1,34 @@
 import styled from 'styled-components';
-import exhibitionBg from '../assets/Images/Home_Img/EXHIBITION.jpg';
-import newsBg from '../assets/Images/Home_Img/NEWS.jpg';
-import brandsBg from '../assets/Images/Home_Img/BRANDS.jpg';
+import exhibitionBg from '../../assets/Images/Home_Img/EXHIBITION.jpg';
+import newsBg from '../../assets/Images/Home_Img/NEWS.jpg';
+import brandsBg from '../../assets/Images/Home_Img/BRANDS.jpg';
 
 const MenuBanner = () => {
   return (
     <MenuBannerContainer>
-      <MenuBannerBox left="0" top="0" width="720px" height="720px">
+      <MenuBannerBox left="0" top="0" width="50%" height="960px">
         <MenuBannerImage backgroundImage={exhibitionBg} />
-        <Title height="720px">
+        <Title height="960px">
           <span>전시회 자세히 보기</span>
           <p>exhibition</p>
         </Title>
-        <OpacityBox left="0" top="0" width="720px" height="720px" />
+        <OpacityBox left="0" top="0" width="100%" height="960px" />
       </MenuBannerBox>
-      <MenuBannerBox left="720px" top="0" width="720px" height="360px">
+      <MenuBannerBox left="50%" top="0" width="50%" height="480px">
         <MenuBannerImage backgroundImage={newsBg} />
-        <Title height="360px">
+        <Title height="480px">
           <span>최신 소식 확인하기</span>
           <p>news</p>
         </Title>
-        <OpacityBox left="720px" top="0" width="720px" height="360px" />
+        <OpacityBox left="960px" top="0" width="960px" height="480px" />
       </MenuBannerBox>
-      <MenuBannerBox left="720px" bottom="0" width="720px" height="360px">
+      <MenuBannerBox left="50%" bottom="0" width="50%" height="480px">
         <MenuBannerImage backgroundImage={brandsBg} />
-        <Title height="360px">
+        <Title height="480px">
           <span>추천 브랜드 살펴보기</span>
           <p>brands</p>
         </Title>
-        <OpacityBox left="720px" bottom="0" width="720px" height="360px" />
+        <OpacityBox left="960px" bottom="0" width="960px" height="480px" />
       </MenuBannerBox>
     </MenuBannerContainer>
   );
@@ -46,9 +46,8 @@ interface MenuBannerBoxProps {
 
 const MenuBannerContainer = styled.div`
   width: 100%;
-  height: 720px;
+  height: 960px;
   position: relative;
-  background-color: ${({ theme }) => theme.colors.primaryWhite};
 `;
 
 const OpacityBox = styled.div<MenuBannerBoxProps>`
@@ -96,6 +95,7 @@ const MenuBannerBox = styled.div<MenuBannerBoxProps>`
   top: ${(props) => props.top};
   bottom: ${(props) => props.bottom};
 
+  max-width: 960px;
   width: ${(props) => props.width};
   height: ${(props) => props.height};
 

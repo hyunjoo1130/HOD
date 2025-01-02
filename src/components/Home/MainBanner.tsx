@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import mainBannerImage from '../assets/Images/Home_Img/MAIN BANNER.jpg';
-import logo from '../assets/Images/Global_Img/logos/홋2_w.png';
-import { ImageContainer } from './CommonStyles';
+import mainBannerImage from '../../assets/Images/Home_Img/MAIN BANNER.jpg';
+import logo from '../../assets/Images/Global_Img/logos/홋2_w.png';
+import { ImageContainer } from '../CommonStyles';
 
 const MainBanner = () => {
   return (

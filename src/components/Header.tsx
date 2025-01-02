@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 import { ImageContainer } from './CommonStyles';
 import logo from '../assets/Images/Global_Img/logos/HOUSE OF DOJAGI.png';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <HeaderContainer>
       <HeaderWrapper>
         <ImageContainer width="20%">
-          <img width={'100%'} src={logo} />
+          <img width={'100%'} src={logo} onClick={() => navigate('/')} />
         </ImageContainer>
         <MenuBox>
           <p>exhibition</p>
@@ -35,6 +38,10 @@ const HeaderWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
+
+  img {
+    cursor: pointer;
+  }
 `;
 
 const MenuBox = styled.div`

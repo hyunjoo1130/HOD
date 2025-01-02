@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import borderBg from '../assets/Images/Home_Img/QUESTION SECTION BORDER.png';
-import searchIcon from '../assets/icons/SEARCH ICON.png';
+import borderBg from '../../assets/Images/Home_Img/QUESTION SECTION BORDER.png';
+import searchIcon from '../../assets/icons/SEARCH ICON.png';
 
 const Question = () => {
   return (
@@ -46,10 +46,9 @@ const Title = styled.div`
   text-align: center;
 
   h1 {
-    font-family: ${({ theme }) => theme.fonts.secondaryEng};
     font-weight: ${({ theme }) => theme.fonts.secondaryEngWeight.regular};
+    font-size: ${({ theme }) => theme.fonts.fontSize.xxLarge};
     text-transform: uppercase;
-    font-size: 50px;
   }
 
   p {

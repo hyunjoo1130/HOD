@@ -20,6 +20,7 @@ declare module 'styled-components' {
         medium: string;
         large: string;
         xLarge: string;
+        xxLarge: string;
       };
       primaryKrWeight: {
         regular: string;

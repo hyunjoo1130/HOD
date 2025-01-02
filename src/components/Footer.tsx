@@ -90,6 +90,10 @@ const SnsIcons = styled.div`
   align-items: center;
   gap: 20px;
   width: 20%;
+
+  img {
+    cursor: pointer;
+  }
 `;
 
 const Divider = styled.div`
