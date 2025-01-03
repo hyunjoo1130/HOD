@@ -27,6 +27,7 @@ const Footer = () => {
             {SNSIcons.map((icon, i) => {
               return (
                 <ImageContainer
+                  key={i}
                   width="20px"
                   style={{ height: '20px', textAlign: 'center' }}
                 >

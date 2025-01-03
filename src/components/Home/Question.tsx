@@ -1,22 +1,48 @@
-import React from 'react';
+import { ChangeEvent, KeyboardEvent, useState } from 'react';
 import styled from 'styled-components';
 import borderBg from '../../assets/Images/Home_Img/QUESTION SECTION BORDER.png';
 import searchIcon from '../../assets/icons/SEARCH ICON.png';
+import { CallGPT } from '../../api/gpt';
 
 const Question = () => {
+  const [prompt, setPrompt] = useState("");
+  const [gptAnswer, setGptAnswer] = useState("");
+
+  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
+    setPrompt(e.target.value);
+  };
+
+  const handleSubmit = async () => {
+    try {
+      const response = await CallGPT(prompt);
+      console.log('question => ', response.question);
+      console.log('summarize => ', response.summarize);  
+      console.log('answer => ', response.answer);  
+      setGptAnswer(response.answer);
+    } catch (error) {
+      console.log('에러발생 : ', error);
+    }
+  }
+
+  const handleEnterSubmit = (e: KeyboardEvent<HTMLInputElement>) => {
+    e.key === 'Enter' ? handleSubmit() : console.error('에러발생 : ', Error);
+  }
+
   return (
     <QuestionContainer>
       <QuestionWrapper backgroundImage={borderBg}>
         <Title>
-          <h1>ask a question</h1>
+          <h1>ask a question to AI</h1>
           <p>도자기에 대해 알고싶은 것이나 궁금한 점이 있나요?</p>
         </Title>
         <QuestionInput>
-          <input placeholder="전통 도자기와 현대 도자기의 차이점은 무엇인가요?" />
+          <input placeholder="전통 도자기와 현대 도자기의 차이점은 무엇인가요?" onChange={handleInput} onKeyDown={handleEnterSubmit} />
           <SearchIconBox>
-            <img width="100%" src={searchIcon} />
+            <img width="100%" src={searchIcon} onClick={handleSubmit} />
           </SearchIconBox>
         </QuestionInput>
+        {/* 임시 테스트 UI */}
+        {gptAnswer && <div style={{ padding: '20px' }}>{gptAnswer}</div>}
       </QuestionWrapper>
     </QuestionContainer>
   );
@@ -65,7 +91,7 @@ const QuestionInput = styled.div`
   input {
     display: block;
     width: 100%;
-    padding: 24px 24px 22px 69px;
+    padding: 22px 24px 22px 69px;
     border: 1px solid ${({ theme }) => theme.colors.gray};
     border-radius: 20px;
     /* box-shadow: x축 y축 blur spread color; */
@@ -83,6 +109,10 @@ const SearchIconBox = styled.div`
   top: 13.5px;
   left: 20px;
   width: 38px;
+
+  img {
+    cursor: pointer;
+  }
 `;
 
 export default Question;

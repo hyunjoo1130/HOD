@@ -69,7 +69,7 @@ const PictureBox = styled.div<PictureBoxProps>`
   top: ${(props) => props.top};
   bottom: ${(props) => props.bottom};
 
-  max-width: 800px;
+  max-width: 1920px;
   width: ${(props) => props.width};
   height: ${(props) => props.height};
 
