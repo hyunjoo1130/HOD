@@ -13,7 +13,7 @@ const Header = () => {
           <img width={'100%'} src={logo} onClick={() => navigate('/')} />
         </ImageContainer>
         <MenuBox>
-          <p>exhibition</p>
+          <p onClick={() => navigate('/exhibitions')}>exhibition</p>
           <p>news</p>
           <p>brands</p>
           <p>about us</p>

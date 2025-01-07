@@ -9,15 +9,12 @@ const ExhibitionPicture = () => {
     <ExhibitionPictureContainer>
       <PictureBox left="0" top="0" width="50%" height="400px">
         <PictureImage backgroundImage={exhibitionImage01} />
-        <OpacityBox left="0" top="0" width="100%" height="400px" />
       </PictureBox>
       <PictureBox left="0" top="50%" width="50%" height="400px">
         <PictureImage backgroundImage={exhibitionImage02} />
-        <OpacityBox left="0" top="0" width="100%" height="400px" />
       </PictureBox>
       <PictureBox left="50%" top="0" width="50%" height="800px">
         <PictureImage backgroundImage={exhibitionImage03} />
-        <OpacityBox left="50%" top="0" width="100%" height="800px" />
       </PictureBox>
     </ExhibitionPictureContainer>
   );
@@ -51,18 +48,6 @@ const PictureImage = styled.div<PictureBoxProps>`
   transition: transform 0.3s ease;
 `;
 
-const OpacityBox = styled.div<PictureBoxProps>`
-  position: absolute;
-  left: 0;
-  top: ${(props) => props.top};
-  bottom: ${(props) => props.bottom};
-
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
-  background-color: ${({ theme }) => theme.colors.primaryWhite};
-  opacity: 0;
-`;
-
 const PictureBox = styled.div<PictureBoxProps>`
   position: absolute;
   left: ${(props) => props.left};
@@ -79,11 +64,6 @@ const PictureBox = styled.div<PictureBoxProps>`
   &:hover {
     ${PictureImage} {
       transform: scale(1.15);
-    }
-
-    ${OpacityBox} {
-      opacity: 0.4;
-      transition: 0.3s;
     }
   }
 `;

@@ -5,8 +5,8 @@ import searchIcon from '../../assets/icons/SEARCH ICON.png';
 import { CallGPT } from '../../api/gpt';
 
 const Question = () => {
-  const [prompt, setPrompt] = useState("");
-  const [gptAnswer, setGptAnswer] = useState("");
+  const [prompt, setPrompt] = useState('');
+  const [gptAnswer, setGptAnswer] = useState('');
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     setPrompt(e.target.value);
@@ -16,27 +16,33 @@ const Question = () => {
     try {
       const response = await CallGPT(prompt);
       console.log('question => ', response.question);
-      console.log('summarize => ', response.summarize);  
-      console.log('answer => ', response.answer);  
+      console.log('summarize => ', response.summarize);
+      console.log('answer => ', response.answer);
       setGptAnswer(response.answer);
     } catch (error) {
       console.log('에러발생 : ', error);
     }
-  }
+  };
 
   const handleEnterSubmit = (e: KeyboardEvent<HTMLInputElement>) => {
-    e.key === 'Enter' ? handleSubmit() : console.error('에러발생 : ', Error);
-  }
+    return e.key === 'Enter'
+      ? handleSubmit()
+      : console.error('에러발생 : ', Error);
+  };
 
   return (
     <QuestionContainer>
       <QuestionWrapper backgroundImage={borderBg}>
         <Title>
-          <h1>ask a question to AI</h1>
-          <p>도자기에 대해 알고싶은 것이나 궁금한 점이 있나요?</p>
+          <h1>ai search engine</h1>
+          <p>도자기에 대해 궁금한 점을 AI에게 질문해 보세요!</p>
         </Title>
         <QuestionInput>
-          <input placeholder="전통 도자기와 현대 도자기의 차이점은 무엇인가요?" onChange={handleInput} onKeyDown={handleEnterSubmit} />
+          <input
+            placeholder="전통 도자기와 현대 도자기의 차이점은 무엇인가요?"
+            onChange={handleInput}
+            onKeyDown={handleEnterSubmit}
+          />
           <SearchIconBox>
             <img width="100%" src={searchIcon} onClick={handleSubmit} />
           </SearchIconBox>

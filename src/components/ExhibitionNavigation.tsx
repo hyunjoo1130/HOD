@@ -25,13 +25,13 @@ const ExhibitionNavigation = () => {
               <NavigationText>
                 {i === examplePathnames.length - 1 ? (
                   <NavigationLink
-                    onClick={() => goToLink(`/${path}`)}
+                    onClick={() => goToLink(`/exhibition_detail`)}
                     underline="underline"
                   >
                     {path}
                   </NavigationLink>
                 ) : (
-                  <NavigationLink onClick={() => goToLink(`/${path}`)}>
+                  <NavigationLink onClick={() => goToLink(`/exhibitions`)}>
                     {path}
                   </NavigationLink>
                 )}
