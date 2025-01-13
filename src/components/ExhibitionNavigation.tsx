@@ -1,10 +1,32 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
+import { ExhibitionData } from '../types/exhibitionsData';
 
 const ExhibitionNavigation = () => {
   const navigate = useNavigate();
-  const examplePathnames = ['exhibition', '달항아리를 만든 곳, 금사리'];
+  const location = useLocation();
+  const pathnames = location.pathname;
+  const [searchParams] = useSearchParams();
+  const [exhibitionData, setExhibitionData] = useState<ExhibitionData[]>([]);
+
+  useEffect(() => {
+    // fetch 함수는 포스터 클릭 했을 때 실행 돼야 함
+    const fetchExhibitionData = async () => {
+      try {
+        const res = await fetch('/data/exhibitionsData.json');
+        if (!res.ok) {
+          throw new Error('데이터를 불러오는데 실패했음.');
+        }
+        const data = await res.json();
+        setExhibitionData(data);
+      } catch (error) {
+        console.error('error => ', error);
+      }
+    };
+
+    fetchExhibitionData();
+  }, []);
 
   const goToLink = (link: string) => {
     navigate(link);
@@ -18,27 +40,39 @@ const ExhibitionNavigation = () => {
             <NavigationLink onClick={() => goToLink('/')}>home</NavigationLink>
           </NavigationText>
         </NavigationPath>
-        {examplePathnames.map((path, i) => {
+        <NavigationPath>
+          <NavigationText>
+            <Divider> | </Divider>
+            <NavigationLink onClick={() => goToLink(`${pathnames}`)}>
+              {pathnames.split('/')}
+            </NavigationLink>
+          </NavigationText>
+        </NavigationPath>
+        {/* {exhibitionData?.map((data, i) => {
           return (
-            <NavigationPath key={i}>
+            <NavigationPath key={data.id}>
               <Divider> | </Divider>
               <NavigationText>
-                {i === examplePathnames.length - 1 ? (
+                {i === exhibitionData.length - 1 ? (
                   <NavigationLink
-                    onClick={() => goToLink(`/exhibition_detail`)}
+                    onClick={() =>
+                      goToLink(
+                        `/exhibition_detail?name=${encodeURIComponent(`${data.title}`)}`
+                      )
+                    }
                     underline="underline"
                   >
-                    {path}
+                    {data.title}
                   </NavigationLink>
                 ) : (
                   <NavigationLink onClick={() => goToLink(`/exhibitions`)}>
-                    {path}
+                    {pathnames}
                   </NavigationLink>
                 )}
               </NavigationText>
             </NavigationPath>
           );
-        })}
+        })} */}
       </ExhibitionNavigationWrapper>
     </ExhibitionNavigationContainer>
   );

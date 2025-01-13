@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "영원한 여정, 특별한 여행",
+    "startDate": "2024.11.12",
+    "endDate": "2025.03.10",
+    "posterUrl": "/images/영원한 여정.jpg"
+  },
+  {
+    "id": 2,
+    "title": "오파츠의 숲 FOREST of OOPArt",
+    "startDate": "2024.11.15",
+    "endDate": "2024.12.15",
+    "posterUrl": "/images/오파츠의 숲.jpg"
+  },
+  {
+    "id": 3,
+    "title": "누구를 위해 창작하는가",
+    "startDate": "2024.11.15",
+    "endDate": "2025.03.23",
+    "posterUrl": "/images/누구를 위해 창작하는가.jpg"
+  },
+  {
+    "id": 4,
+    "title": "조선 전기 미술",
+    "startDate": "2025.06.10",
+    "endDate": "2025.08.31",
+    "posterUrl": "/images/조선전기미술.jpg"
+  },
+  {
+    "id": 5,
+    "title": "달 항아리를 만든 곳, 금사리",
+    "startDate": "2024.06.25",
+    "endDate": "2025.06.22",
+    "posterUrl": "/images/금사리.jpg"
+  },
+  {
+    "id": 6,
+    "title": "So back",
+    "startDate": "2022.12.01",
+    "endDate": "2022.12.04",
+    "posterUrl": "/images/소백.jpg"
+  },
+  {
+    "id": 7,
+    "title": "아시아를 칠하다",
+    "startDate": "2021.12.21",
+    "endDate": "2022.03.20",
+    "posterUrl": "/images/아시아를 칠하다.jpg"
+  },
+  {
+    "id": 8,
+    "title": "NEO KOREAN GROUP",
+    "startDate": "2021.09.23",
+    "endDate": "2021.09.23",
+    "posterUrl": "/images/neo_korean_group.jpg"
+  }
+]

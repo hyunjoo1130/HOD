@@ -30,11 +30,11 @@ const TopBannerContainer = styled.div<TopBannerContainerProps>`
   background-position: center;
   background-repeat: no-repeat;
 
-  height: 400px;
+  height: 465px;
 `;
 
 const TopBannerContentWrapper = styled.div`
-  padding: 45px 60px;
+  padding: 110px 60px 0;
 `;
 
 const Logo = styled.div`

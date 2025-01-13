@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import ExhibitionNavigation from '../ExhibitionNavigation';
+import backgroundImage from '../../assets/Images/Exhibitions_Img/BANNER.jpeg';
 
 const TopBanner = () => {
   return (
-    <TopBannerContainer backgroundImage={''}>
+    <TopBannerContainer backgroundImage={backgroundImage}>
       <TopBannerContentWrapper>
         {/* navigation */}
         <ExhibitionNavigation />
@@ -24,11 +25,11 @@ const TopBannerContainer = styled.div<TopBannerContainerProps>`
   background-repeat: no-repeat;
   background-color: #ddd;
 
-  height: 400px;
+  height: 465px;
 `;
 
 const TopBannerContentWrapper = styled.div`
-  padding: 45px 60px;
+  padding: 110px 60px 0;
 `;
 
 export default TopBanner;

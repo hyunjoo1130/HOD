@@ -2,11 +2,15 @@ import styled from 'styled-components';
 import threeDImg from '../../assets/Images/Home_Img/VIRTUAL CERAMIC.png';
 import { ImageContainer, MoreButton } from '../CommonStyles';
 import moreArrow from '../../assets/icons/MORE ARROW.png';
+import VirtualModal from './VirtualModal';
+import { useState } from 'react';
 
 const VirtualExperience = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <VirtualExperienceContainer>
-      {/* img 바꾸기  */}
+      {showModal && <VirtualModal setShowModal={setShowModal} />}
       <ImageContainer width="50%" style={{ textAlign: 'center' }}>
         <img width="34%" src={threeDImg} />
       </ImageContainer>
@@ -16,7 +20,7 @@ const VirtualExperience = () => {
           <h1>virtual experience</h1>
           <p>언제 어디서든 전통 한국 도자기의 매력을 느껴보세요</p>
         </Titles>
-        <MoreButton>
+        <MoreButton onClick={() => setShowModal(!showModal)}>
           <p>더보기</p>
           <p>
             <img width="90%" src={moreArrow} />

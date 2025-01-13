@@ -24,6 +24,8 @@ const App: React.FC = () => {
   );
 };
 
-const MainContainer = styled.div``;
+const MainContainer = styled.div`
+  position: relative;
+`;
 
 export default App;

@@ -6,6 +6,10 @@ import { useNavigate } from 'react-router-dom';
 const Header = () => {
   const navigate = useNavigate();
 
+  const goToPage = (link: string) => {
+    navigate(`/${link}`);
+  };
+
   return (
     <HeaderContainer>
       <HeaderWrapper>
@@ -13,10 +17,10 @@ const Header = () => {
           <img width={'100%'} src={logo} onClick={() => navigate('/')} />
         </ImageContainer>
         <MenuBox>
-          <p onClick={() => navigate('/exhibitions')}>exhibition</p>
+          <p onClick={() => goToPage('exhibitions')}>exhibition</p>
           <p>news</p>
           <p>brands</p>
-          <p>about us</p>
+          <p onClick={() => goToPage('about_hod')}>about us</p>
         </MenuBox>
         <CustomerMenuBox>
           <p>search</p>
@@ -28,9 +32,17 @@ const Header = () => {
 };
 
 const HeaderContainer = styled.header`
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+
   font-weight: ${({ theme }) => theme.fonts.secondaryEngWeight.light};
   text-transform: uppercase;
   padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+
+  z-index: 30;
 `;
 
 const HeaderWrapper = styled.div`
@@ -50,18 +62,8 @@ const MenuBox = styled.div`
   align-items: center;
   gap: 40px;
 
-  /* 내부의 모든 p태그에 적용될 스타일 */
   p {
     cursor: pointer;
-
-    /* 특정 p태그만 다르게 스타일링하고 싶다면 클래스를 활용 */
-    /* &.title {
-      // ...
-    }
-    
-    &:last-child {
-      // ...
-    } */
   }
 `;
 

@@ -21,7 +21,7 @@ export const CallGPT = async (prompt: string) => {
         role: 'user',
         content: `1. [question]: Write down the question i asked.
                 2. [summarize]: Write a brief summary of [question].
-                3. [answer]: Please answer about [summarize] with simple and accurate information, not too long.
+                3. [answer]: Please answer [Summary] in precise and easy words, and keep your answer to 500 characters or less.
         
                 Translate into Korean and Use the output in the following JSON format:
                 {
@@ -37,7 +37,7 @@ export const CallGPT = async (prompt: string) => {
     ],
     model: 'gpt-4o-mini',
     temperature: 0.5,
-    max_tokens: 300,
+    max_tokens: 150,
   });
 
   const rawAnswer = completion.choices[0].message.content; // json 형태

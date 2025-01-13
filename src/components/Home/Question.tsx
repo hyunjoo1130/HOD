@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import borderBg from '../../assets/Images/Home_Img/QUESTION SECTION BORDER.png';
 import searchIcon from '../../assets/icons/SEARCH ICON.png';
 import { CallGPT } from '../../api/gpt';
+import { useNavigate } from 'react-router-dom';
 
 const Question = () => {
+  const navigate = useNavigate();
   const [prompt, setPrompt] = useState('');
   const [gptAnswer, setGptAnswer] = useState('');
 
@@ -15,6 +17,7 @@ const Question = () => {
   const handleSubmit = async () => {
     try {
       const response = await CallGPT(prompt);
+      navigate('/question_to_ai');
       console.log('question => ', response.question);
       console.log('summarize => ', response.summarize);
       console.log('answer => ', response.answer);

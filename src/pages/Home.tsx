@@ -26,6 +26,7 @@ const Home = () => {
 };
 
 const HomeContainer = styled.div`
+  position: relative;
   margin: 0 auto;
 `;
 

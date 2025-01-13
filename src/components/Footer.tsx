@@ -6,9 +6,15 @@ import meta from '../assets/icons/meta.png';
 import instagram from '../assets/icons/instagram.png';
 import twitter from '../assets/icons/twitter.png';
 import linkedin from '../assets/icons/linkedin.png';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate = useNavigate();
   const SNSIcons = [meta, instagram, twitter, linkedin];
+
+  const goToPage = (link: string) => {
+    navigate(`/${link}`);
+  };
 
   return (
     <FooterContainer>
@@ -18,10 +24,10 @@ const Footer = () => {
             <img width="100%" src={logo} />
           </ImageContainer>
           <MenuBox>
-            <p>exhibition</p>
+            <p onClick={() => goToPage('exhibitions')}>exhibition</p>
             <p>news</p>
             <p>brands</p>
-            <p>about us</p>
+            <p onClick={() => goToPage('about_hod')}>about us</p>
           </MenuBox>
           <SnsIcons>
             {SNSIcons.map((icon, i) => {
@@ -57,7 +63,7 @@ const Footer = () => {
   );
 };
 
-const FooterContainer = styled.div`
+const FooterContainer = styled.footer`
   padding: 150px 40px 120px;
   background: ${({ theme }) => theme.colors.secondaryWhite};
   font-weight: ${({ theme }) => theme.fonts.secondaryEngWeight.light};
