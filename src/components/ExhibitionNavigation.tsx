@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { ExhibitionData } from '../types/exhibitionsData';
 
 const ExhibitionNavigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const pathnames = location.pathname;
-  const [searchParams] = useSearchParams();
+  const pathnames = location.pathname.split('/').slice(1);
+  const queryParams = new URLSearchParams(location.search);
+  const myParam = queryParams.get('name');
   const [exhibitionData, setExhibitionData] = useState<ExhibitionData[]>([]);
+
+  console.log('queryParams => ', queryParams);
+  console.log('myParam => ', myParam);
 
   useEffect(() => {
     // fetch 함수는 포스터 클릭 했을 때 실행 돼야 함
@@ -40,39 +44,17 @@ const ExhibitionNavigation = () => {
             <NavigationLink onClick={() => goToLink('/')}>home</NavigationLink>
           </NavigationText>
         </NavigationPath>
-        <NavigationPath>
+        {pathnames.map((pathname, i) => {
+          return <NavigationPath key={i}>
           <NavigationText>
             <Divider> | </Divider>
-            <NavigationLink onClick={() => goToLink(`${pathnames}`)}>
-              {pathnames.split('/')}
+            <NavigationLink onClick={() => {goToLink(`/${pathname}`)}}
+            underline={i === pathnames.length - 1 ? 'underline' : 'none'}>
+              {pathname === 'exhibition_detail' ? myParam : pathname.replace('_', ' ')}
             </NavigationLink>
           </NavigationText>
         </NavigationPath>
-        {/* {exhibitionData?.map((data, i) => {
-          return (
-            <NavigationPath key={data.id}>
-              <Divider> | </Divider>
-              <NavigationText>
-                {i === exhibitionData.length - 1 ? (
-                  <NavigationLink
-                    onClick={() =>
-                      goToLink(
-                        `/exhibition_detail?name=${encodeURIComponent(`${data.title}`)}`
-                      )
-                    }
-                    underline="underline"
-                  >
-                    {data.title}
-                  </NavigationLink>
-                ) : (
-                  <NavigationLink onClick={() => goToLink(`/exhibitions`)}>
-                    {pathnames}
-                  </NavigationLink>
-                )}
-              </NavigationText>
-            </NavigationPath>
-          );
-        })} */}
+        })}
       </ExhibitionNavigationWrapper>
     </ExhibitionNavigationContainer>
   );
@@ -86,7 +68,6 @@ const ExhibitionNavigationContainer = styled.div``;
 
 const ExhibitionNavigationWrapper = styled.div`
   display: flex;
-  width: 25%;
 `;
 
 const NavigationPath = styled.div`

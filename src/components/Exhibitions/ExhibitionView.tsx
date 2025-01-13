@@ -27,9 +27,6 @@ const ExhibitionView = () => {
     fetchExhibitionData();
   }, []);
 
-  const posterUrls = exhibitionData?.map((data) => data.posterUrl);
-  console.log(posterUrls);
-
   const goToDetail = (link: string) => {
     navigate(link);
   };
@@ -55,7 +52,7 @@ const ExhibitionView = () => {
             <ImageContainer
               width="30%"
               onClick={() =>
-                goToDetail(`/exhibition_detail?name=${data.title}`)
+                goToDetail(`/exhibitions/exhibition_detail?name=${data.title}`)
               }
             >
               <img src={data.posterUrl} alt={`poster${i + 1}`} width="100%" />

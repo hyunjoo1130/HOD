@@ -11,7 +11,7 @@ const routes: RouteObject[] = [
     element: <Home />,
   },
   {
-    path: '/exhibition_detail',
+    path: '/exhibitions/exhibition_detail',
     element: <ExhibitionDetail />,
   },
   {
@@ -23,7 +23,7 @@ const routes: RouteObject[] = [
     element: <AiAnswer />,
   },
   {
-    path: '/about_hod',
+    path: '/about_us',
     element: <AboutUs />,
   },
 ];

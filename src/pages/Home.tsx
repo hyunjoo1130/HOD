@@ -5,8 +5,14 @@ import Question from '../components/Home/Question';
 import VirtualExperience from '../components/Home/VirtualExperience';
 import TopView from '../components/Home/TopView';
 import BrandIntro from '../components/Home/BrandIntro';
+import { useEffect } from 'react';
+import { toTop } from '../utils/toTop';
 
 const Home = () => {
+  useEffect(() => {
+    toTop();
+  }, []);
+
   return (
     <HomeContainer>
       {/* main banner */}

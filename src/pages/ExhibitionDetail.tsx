@@ -4,10 +4,11 @@ import TopBanner from '../components/ExhibitionDetail/TopBanner';
 import ExhibitionAbout from '../components/ExhibitionDetail/ExhibitionAbout';
 import ExhibitionPicture from '../components/ExhibitionDetail/ExhibitionPicture';
 import ExhibitionInfo from '../components/ExhibitionDetail/ExhibitionInfo';
+import { toTop } from '../utils/toTop';
 
 const ExhibitionDetail = () => {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    toTop();
   }, []);
 
   return (
