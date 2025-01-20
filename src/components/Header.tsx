@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { ImageContainer } from './CommonStyles';
 import logo from '../assets/Images/Global_Img/logos/HOUSE OF DOJAGI.png';
+import search from '../assets/icons/SEARCH.png';
+import login from '../assets/icons/LOGIN.png';
 import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
@@ -17,14 +19,19 @@ const Header = () => {
           <img width={'100%'} src={logo} onClick={() => navigate('/')} />
         </ImageContainer>
         <MenuBox>
+          <p onClick={() => goToPage('ai_search')}>ai search</p>
           <p onClick={() => goToPage('exhibitions')}>exhibition</p>
           <p>news</p>
-          <p>brands</p>
+          <p onClick={() => goToPage('brands')}>brands</p>
           <p onClick={() => goToPage('about_us')}>about us</p>
         </MenuBox>
         <CustomerMenuBox>
-          <p>search</p>
-          <p>login</p>
+          <ImageContainer width="10%">
+            <img src={search} alt="검색" width="100%" />
+          </ImageContainer>
+          <ImageContainer width="9%">
+            <img src={login} alt="로그인" width="100%" />
+          </ImageContainer>
         </CustomerMenuBox>
       </HeaderWrapper>
     </HeaderContainer>
@@ -69,9 +76,10 @@ const MenuBox = styled.div`
 
 const CustomerMenuBox = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
+  padding-right: 20px;
 
   p {
     cursor: pointer;

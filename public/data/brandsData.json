@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "loamarchive",
+    "description": "롬아카이브는 부드러우면서 강인한 자연물에서 영감을 받아 전부 수작업으로 도자를 빚어냅니다. 프로젝트별로 다루는 대상이 달라지며 그것은 꽃이 되거나 열매, 또는 자연물의 구성원인 인간이 되면서 도자의 모습으로 기록되어 우리 곁에서 머물 것입니다.",
+    "instaUrl": "https://www.instagram.com/loamarchive/",
+    "homepageUrl": "https://www.loamarchive.com/",
+    "thumbnailUrl": "/images/LOAM ARCHIVE.jpg"
+  },
+  {
+    "id": 2,
+    "name": "vertbouteille.ceramics",
+    "description": "프랑스에서 조형예술학을 전공하고 도예가의 길을 걷고 있습니다.",
+    "instaUrl": "https://www.instagram.com/vertbouteille.ceramics/",
+    "homepageUrl": "",
+    "thumbnailUrl": "/images/VERTBOUTEILLE_CERAMICS.jpg"
+  },
+  {
+    "id": 3,
+    "name": "chaeramic",
+    "description": "채민우 작가는 2D로 존재했던 타일을 입체화시켜 도자 공법에 새로운 VISION을 제시합니다.",
+    "instaUrl": "https://www.instagram.com/chaeramic/",
+    "homepageUrl": "",
+    "thumbnailUrl": "/images/CHAERAMIC.jpg"
+  },
+  {
+    "id": 4,
+    "name": "dela0n",
+    "description": "Art in every meal, Delaon. 델라온은 자연의 아름다움과 소도시의 라이프스타일에서 영감을 받아 탄생한 세라믹 스튜디오입니다. 모든 공예품은 성수 아틀리에에서 수작업으로 제작되며, 일상에 자연스럽게 스며드는 디자인과 실용성을 추구합니다. 유행을 타지 않는 아름다움으로 식탁 위에 감각적인 행복을 선사합니다.",
+    "instaUrl": "https://www.instagram.com/dela0n/",
+    "homepageUrl": "https://delaon.com/index.html",
+    "thumbnailUrl": "/images/DELA0N.jpg"
+  },
+  {
+    "id": 5,
+    "name": "greenofgarden_",
+    "description": "",
+    "instaUrl": "https://www.instagram.com/greenofgarden_/",
+    "homepageUrl": "",
+    "thumbnailUrl": "/images/GREENOFGARDEN_.jpg"
+  },
+  {
+    "id": 6,
+    "name": "port_de_table",
+    "description": "",
+    "instaUrl": "https://www.instagram.com/port_de_table/",
+    "homepageUrl": "https://smartstore.naver.com/port_de_table",
+    "thumbnailUrl": "/images/PORT_DE_TABLE.jpg"
+  },
+  {
+    "id": 7,
+    "name": "arvoshop.official",
+    "description": "따뜻한 시간에 함께 할 빛나는 기물들을 소개합니다.",
+    "instaUrl": "https://www.instagram.com/arvoshop.official/",
+    "homepageUrl": "https://smartstore.naver.com/shoparvo",
+    "thumbnailUrl": "/images/ARVOSHOP_OFFICIAL.jpg"
+  },
+  {
+    "id": 8,
+    "name": "sunoki.studio",
+    "description": "",
+    "instaUrl": "https://www.instagram.com/sunoki.studio/",
+    "homepageUrl": "",
+    "thumbnailUrl": "/images/SUNOKI_STUDIO.jpg"
+  }
+]

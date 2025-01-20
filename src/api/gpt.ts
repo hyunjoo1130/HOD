@@ -3,7 +3,7 @@ import OpenAI from 'openai';
 const apiKey = import.meta.env.VITE_CHAT_GPT_API_KEY as string;
 const openai = new OpenAI({ apiKey, dangerouslyAllowBrowser: true });
 
-interface GPTResponse {
+export interface GPTResponse {
   question: string;
   summarize: string;
   answer: string;
@@ -21,7 +21,7 @@ export const CallGPT = async (prompt: string) => {
         role: 'user',
         content: `1. [question]: Write down the question i asked.
                 2. [summarize]: Write a brief summary of [question].
-                3. [answer]: Please answer [Summary] in precise and easy words, and keep your answer to 500 characters or less.
+                3. [answer]: Please answer [Summary] in precise and easy words.
         
                 Translate into Korean and Use the output in the following JSON format:
                 {
@@ -37,7 +37,7 @@ export const CallGPT = async (prompt: string) => {
     ],
     model: 'gpt-4o-mini',
     temperature: 0.5,
-    max_tokens: 150,
+    max_tokens: 300,
   });
 
   const rawAnswer = completion.choices[0].message.content; // json 형태
@@ -45,7 +45,7 @@ export const CallGPT = async (prompt: string) => {
 
   try {
     const parsedAnswer = JSON.parse(rawAnswer) as GPTResponse; // JSON.parse로 json 값을 react에서 사용할 수 있도록 변환시킴.
-    return parsedAnswer;
+    return [parsedAnswer];
   } catch (error) {
     console.error('JSON 파싱 실패 | ', error);
     throw new Error('응답을 처리하는데 실패했어요');

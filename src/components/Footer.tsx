@@ -24,9 +24,10 @@ const Footer = () => {
             <img width="100%" src={logo} />
           </ImageContainer>
           <MenuBox>
+            <p onClick={() => goToPage('ai_search')}>ai search</p>
             <p onClick={() => goToPage('exhibitions')}>exhibition</p>
             <p>news</p>
-            <p>brands</p>
+            <p onClick={() => goToPage('brands')}>brands</p>
             <p onClick={() => goToPage('about_us')}>about us</p>
           </MenuBox>
           <SnsIcons>

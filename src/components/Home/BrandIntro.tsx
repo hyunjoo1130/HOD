@@ -3,8 +3,11 @@ import styled from 'styled-components';
 import { ImageContainer, MoreButton } from '../CommonStyles';
 import image from '../../assets/Images/Home_Img/BRAND INTRO.jpg';
 import moreArrow from '../../assets/icons/MORE ARROW.png';
+import { useNavigate } from 'react-router-dom';
 
 const BrandIntro = () => {
+  const navigate = useNavigate();
+
   return (
     <BrandIntroContainer>
       <TextContent>
@@ -23,7 +26,7 @@ const BrandIntro = () => {
             것이 ‘홋'의 목표입니다.
           </p>
         </Content>
-        <MoreButton>
+        <MoreButton onClick={() => navigate('/about_us')}>
           <p>더보기</p>
           <p>
             <img width="90%" src={moreArrow} />
@@ -66,14 +69,14 @@ const Title = styled.div`
 
   p {
     color: ${({ theme }) => theme.colors.gray};
-    font-size: 30px;
+    font-size: ${({ theme }) => theme.fonts.fontSize.xLarge};
   }
 `;
 
 const Content = styled.div`
   p {
     line-height: 2;
-    font-size: ${({ theme }) => theme.fonts.fontSize.xLarge}; // 25px
+    font-size: ${({ theme }) => theme.fonts.fontSize.xLarge};
     font-weight: ${({ theme }) => theme.fonts.secondaryEngWeight.light};
   }
 `;

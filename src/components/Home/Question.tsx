@@ -1,27 +1,27 @@
 import { ChangeEvent, KeyboardEvent, useState } from 'react';
 import styled from 'styled-components';
 import borderBg from '../../assets/Images/Home_Img/QUESTION SECTION BORDER.png';
-import searchIcon from '../../assets/icons/SEARCH ICON.png';
+import searchIcon from '../../assets/icons/AI SEARCH ICON.png';
 import { CallGPT } from '../../api/gpt';
 import { useNavigate } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
+import { gptAnswerState } from '../../state/atoms';
 
 const Question = () => {
   const navigate = useNavigate();
   const [prompt, setPrompt] = useState('');
-  const [gptAnswer, setGptAnswer] = useState('');
+  const [gptAnswer, setGptAnswer] = useRecoilState(gptAnswerState);
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     setPrompt(e.target.value);
   };
 
   const handleSubmit = async () => {
+    navigate('/ai_search');
     try {
       const response = await CallGPT(prompt);
-      navigate('/question_to_ai');
-      console.log('question => ', response.question);
-      console.log('summarize => ', response.summarize);
-      console.log('answer => ', response.answer);
-      setGptAnswer(response.answer);
+      setGptAnswer(response);
+      console.log('response => ', response);
     } catch (error) {
       console.log('에러발생 : ', error);
     }
@@ -50,8 +50,6 @@ const Question = () => {
             <img width="100%" src={searchIcon} onClick={handleSubmit} />
           </SearchIconBox>
         </QuestionInput>
-        {/* 임시 테스트 UI */}
-        {gptAnswer && <div style={{ padding: '20px' }}>{gptAnswer}</div>}
       </QuestionWrapper>
     </QuestionContainer>
   );

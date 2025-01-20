@@ -8,19 +8,22 @@ import theme from './styles/theme';
 import GlobalStyles from './styles/globalStyles';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { RecoilRoot } from 'recoil';
 
 const App: React.FC = () => {
   const routing = useRoutes(routes);
 
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <MainContainer>
-        <Header />
-        {routing}
-        <Footer />
-      </MainContainer>
-    </ThemeProvider>
+    <RecoilRoot>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <MainContainer>
+          <Header />
+          {routing}
+          <Footer />
+        </MainContainer>
+      </ThemeProvider>
+    </RecoilRoot>
   );
 };
 

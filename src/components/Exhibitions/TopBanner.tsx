@@ -8,7 +8,7 @@ const TopBanner = () => {
     <TopBannerContainer backgroundImage={backgroundImage}>
       <TopBannerContentWrapper>
         {/* navigation */}
-        <ExhibitionNavigation />
+        <ExhibitionNavigation linkColor="white" />
       </TopBannerContentWrapper>
     </TopBannerContainer>
   );

@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { ExhibitionData } from '../types/exhibitionsData';
+import { ExhibitionData } from '../types/dataTypes';
+import { fetchExhibitionData } from '../utils/fetchExhibitionData';
 
-const ExhibitionNavigation = () => {
+interface ExhibitionNavigationProps {
+  linkColor: string;
+}
+
+const ExhibitionNavigation: React.FC<ExhibitionNavigationProps> = ({
+  linkColor,
+}) => {
   const navigate = useNavigate();
   const location = useLocation();
   const pathnames = location.pathname.split('/').slice(1);
@@ -11,25 +18,12 @@ const ExhibitionNavigation = () => {
   const myParam = queryParams.get('name');
   const [exhibitionData, setExhibitionData] = useState<ExhibitionData[]>([]);
 
-  console.log('queryParams => ', queryParams);
-  console.log('myParam => ', myParam);
+  // console.log('pathnames => ', pathnames);
+  // console.log('queryParams => ', queryParams);
+  // console.log('myParam => ', myParam);
 
   useEffect(() => {
-    // fetch 함수는 포스터 클릭 했을 때 실행 돼야 함
-    const fetchExhibitionData = async () => {
-      try {
-        const res = await fetch('/data/exhibitionsData.json');
-        if (!res.ok) {
-          throw new Error('데이터를 불러오는데 실패했음.');
-        }
-        const data = await res.json();
-        setExhibitionData(data);
-      } catch (error) {
-        console.error('error => ', error);
-      }
-    };
-
-    fetchExhibitionData();
+    fetchExhibitionData(setExhibitionData);
   }, []);
 
   const goToLink = (link: string) => {
@@ -41,19 +35,30 @@ const ExhibitionNavigation = () => {
       <ExhibitionNavigationWrapper>
         <NavigationPath>
           <NavigationText>
-            <NavigationLink onClick={() => goToLink('/')}>home</NavigationLink>
-          </NavigationText>
-        </NavigationPath>
-        {pathnames.map((pathname, i) => {
-          return <NavigationPath key={i}>
-          <NavigationText>
-            <Divider> | </Divider>
-            <NavigationLink onClick={() => {goToLink(`/${pathname}`)}}
-            underline={i === pathnames.length - 1 ? 'underline' : 'none'}>
-              {pathname === 'exhibition_detail' ? myParam : pathname.replace('_', ' ')}
+            <NavigationLink onClick={() => goToLink('/')} color={linkColor}>
+              home
             </NavigationLink>
           </NavigationText>
         </NavigationPath>
+        {pathnames.map((pathname, i) => {
+          return (
+            <NavigationPath key={i}>
+              <NavigationText>
+                <Divider color={linkColor}> | </Divider>
+                <NavigationLink
+                  onClick={() => {
+                    goToLink(`/${pathname}`);
+                  }}
+                  underline={i === pathnames.length - 1 ? 'underline' : 'none'}
+                  color={linkColor}
+                >
+                  {pathname === 'exhibition_detail'
+                    ? myParam
+                    : pathname.replace('_', ' ')}
+                </NavigationLink>
+              </NavigationText>
+            </NavigationPath>
+          );
         })}
       </ExhibitionNavigationWrapper>
     </ExhibitionNavigationContainer>
@@ -62,6 +67,7 @@ const ExhibitionNavigation = () => {
 
 interface NavigationLinkProps {
   underline?: string;
+  color?: string;
 }
 
 const ExhibitionNavigationContainer = styled.div``;
@@ -81,18 +87,18 @@ const NavigationLink = styled.span<NavigationLinkProps>`
   text-transform: uppercase;
   font-size: ${({ theme }) => theme.fonts.fontSize.small};
   font-weight: ${({ theme }) => theme.fonts.secondaryEngWeight.light};
-  color: ${({ theme }) => theme.colors.primaryWhite};
+  color: ${(props) => props.color};
 
   text-decoration: ${(props) => props.underline};
   cursor: pointer;
 `;
 
-const Divider = styled.span`
+const Divider = styled.span<NavigationLinkProps>`
   display: inline-block;
   padding: 0 10px;
   font-size: ${({ theme }) => theme.fonts.fontSize.small};
   font-weight: ${({ theme }) => theme.fonts.secondaryEngWeight.light};
-  color: ${({ theme }) => theme.colors.primaryWhite};
+  color: ${(props) => props.color};
 `;
 
 export default ExhibitionNavigation;
