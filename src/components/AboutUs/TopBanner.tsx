@@ -5,7 +5,7 @@ import backgroundImage from '../../assets/Images/AboutUs_Img/BANNER IMAGE.jpg';
 const TopBanner = () => {
   return (
     <TopBannerContainer backgroundImage={backgroundImage}>
-      <TopBannerContentWrapper>
+      <TopBannerWrapper>
         {/* navigation */}
         <ExhibitionNavigation linkColor="black" />
         <TextContent>
@@ -16,7 +16,7 @@ const TopBanner = () => {
             자연과의 연결을 강조합니다
           </Content>
         </TextContent>
-      </TopBannerContentWrapper>
+      </TopBannerWrapper>
     </TopBannerContainer>
   );
 };
@@ -34,7 +34,7 @@ const TopBannerContainer = styled.div<TopBannerContainerProps>`
   height: 1200px;
 `;
 
-const TopBannerContentWrapper = styled.div`
+const TopBannerWrapper = styled.div`
   padding: 110px 60px 0;
 `;
 

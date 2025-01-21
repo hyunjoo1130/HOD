@@ -10,7 +10,7 @@ const OtherBrands = () => {
   const [brandsData, setBrandsData] = useState<BrandsData[]>([]);
 
   const goToDetail = (query: string) => {
-    navigate(`/brands/brands_detail?name=${query}`);
+    navigate(`/brands/brand_detail?name=${query}`);
   };
 
   useEffect(() => {

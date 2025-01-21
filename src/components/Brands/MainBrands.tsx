@@ -15,6 +15,10 @@ const MainBrands = () => {
     fetchBrandsData(setBrandsData);
   }, []);
 
+  const goToDetail = (query: string) => {
+    navigate(`/brands/brand_detail?name=${query}`);
+  };
+
   return (
     <MainBrandsContainer>
       <MainBrandSection>
@@ -31,7 +35,7 @@ const MainBrands = () => {
             <p>this week</p>
           </Title>
           <Content>{brandsData[0]?.description}</Content>
-          <MoreButton onClick={() => navigate('/brands_detail')}>
+          <MoreButton onClick={() => goToDetail(brandsData[0]?.name)}>
             <p>더보기</p>
             <p>
               <img width="90%" src={moreArrow} />
@@ -46,7 +50,7 @@ const MainBrands = () => {
             <p>lase week</p>
           </Title>
           <Content>{brandsData[1]?.description}</Content>
-          <MoreButton onClick={() => navigate('/brands_detail')}>
+          <MoreButton onClick={() => goToDetail(brandsData[1]?.name)}>
             <p>더보기</p>
             <p>
               <img width="90%" src={moreArrow} />

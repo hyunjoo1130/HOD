@@ -2,10 +2,12 @@ import styled from 'styled-components';
 
 interface ImageContainerProps {
   width?: string;
+  margin?: string;
 }
 
 export const ImageContainer = styled.div<ImageContainerProps>`
   width: ${(props) => props.width || '100%'};
+  margin: ${(props) => props.margin};
 `;
 
 export const MoreButton = styled.div`

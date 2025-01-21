@@ -5,6 +5,7 @@ import Exhibitions from '../pages/Exhibitions';
 import AboutUs from '../pages/AboutUs';
 import AiSearch from '../pages/AiSearch';
 import Brands from '../pages/Brands';
+import BrandDetail from '../pages/BrandDetail';
 
 const routes: RouteObject[] = [
   {
@@ -30,6 +31,10 @@ const routes: RouteObject[] = [
   {
     path: '/brands',
     element: <Brands />,
+  },
+  {
+    path: '/brands/brand_detail',
+    element: <BrandDetail />,
   },
 ];
 

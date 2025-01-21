@@ -6,10 +6,12 @@ import { fetchExhibitionData } from '../utils/fetchExhibitionData';
 
 interface ExhibitionNavigationProps {
   linkColor: string;
+  myPathName?: string;
 }
 
 const ExhibitionNavigation: React.FC<ExhibitionNavigationProps> = ({
   linkColor,
+  myPathName,
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -52,7 +54,7 @@ const ExhibitionNavigation: React.FC<ExhibitionNavigationProps> = ({
                   underline={i === pathnames.length - 1 ? 'underline' : 'none'}
                   color={linkColor}
                 >
-                  {pathname === 'exhibition_detail'
+                  {pathname === myPathName
                     ? myParam
                     : pathname.replace('_', ' ')}
                 </NavigationLink>

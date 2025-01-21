@@ -5,11 +5,14 @@ import logo from '../../assets/Images/Global_Img/logos/홋2_w.png';
 import ExhibitionNavigation from '../ExhibitionNavigation';
 
 const TopBanner = () => {
+  const pathnames = location.pathname.split('/').slice(1);
+  const pathname = pathnames.slice(pathnames.length - 1);
+
   return (
     <TopBannerContainer backgroundImage={backgroundImage}>
       <TopBannerContentWrapper>
         {/* navigation */}
-        <ExhibitionNavigation />
+        <ExhibitionNavigation linkColor="black" myPathName={pathname[0]} />
         <Logo>
           <LogoImage>
             <img height="100%" src={logo} />
