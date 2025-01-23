@@ -14,3 +14,13 @@ export interface BrandsData {
   homepageUrl: string;
   thumbnailUrl: string;
 }
+
+export interface NewsData {
+  id: number;
+  thumbnail: string;
+  title: string;
+  subTitle: string;
+  writer: string;
+  publishedDate: string;
+  views?: number;
+}

@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { ImageContainer, MoreButton } from '../CommonStyles';
 import image from '../../assets/Images/Home_Img/BRAND INTRO.jpg';

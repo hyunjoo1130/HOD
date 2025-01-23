@@ -5,12 +5,13 @@ import searchIcon from '../../assets/icons/AI SEARCH ICON.png';
 import { CallGPT } from '../../api/gpt';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
-import { gptAnswerState } from '../../state/atoms';
+import { gptAnswerState, gptLoadingState } from '../../state/atoms';
 
 const Question = () => {
   const navigate = useNavigate();
   const [prompt, setPrompt] = useState('');
   const [gptAnswer, setGptAnswer] = useRecoilState(gptAnswerState);
+  const [gptLoading, setGptLoading] = useRecoilState(gptLoadingState);
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     setPrompt(e.target.value);
@@ -18,6 +19,7 @@ const Question = () => {
 
   const handleSubmit = async () => {
     navigate('/ai_search');
+    setGptLoading(true);
     try {
       const response = await CallGPT(prompt);
       setGptAnswer(response);

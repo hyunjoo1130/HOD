@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import TopBanner from '../components/Exhibitions/TopBanner';
 import PageTitle from '../components/Exhibitions/PageTitle';

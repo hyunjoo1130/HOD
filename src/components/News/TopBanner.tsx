@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import ExhibitionNavigation from '../ExhibitionNavigation';
-import backgroundImage from '../../assets/Images/Exhibitions_Img/BANNER.jpeg';
+import backgroundImage from '../../assets/Images/News_Img/BANNER.jpg';
 
 const TopBanner = () => {
   return (

@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import TopBanner from '../components/Brands/TopBanner';
 import PageTitle from '../components/Brands/PageTitle';

@@ -6,6 +6,7 @@ import AboutUs from '../pages/AboutUs';
 import AiSearch from '../pages/AiSearch';
 import Brands from '../pages/Brands';
 import BrandDetail from '../pages/BrandDetail';
+import News from '../pages/News';
 
 const routes: RouteObject[] = [
   {
@@ -35,6 +36,10 @@ const routes: RouteObject[] = [
   {
     path: '/brands/brand_detail',
     element: <BrandDetail />,
+  },
+  {
+    path: '/news',
+    element: <News />,
   },
 ];
 

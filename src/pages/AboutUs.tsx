@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import TopBanner from '../components/AboutUs/TopBanner';
 import DojagiSection from '../components/AboutUs/DojagiSection';

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import backgroundImage from '../../assets/Images/BrandDetail_Img/BANNER.jpg';
 import ExhibitionNavigation from '../ExhibitionNavigation';

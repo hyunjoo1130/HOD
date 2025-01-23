@@ -21,7 +21,7 @@ const Header = () => {
         <MenuBox>
           <p onClick={() => goToPage('ai_search')}>ai search</p>
           <p onClick={() => goToPage('exhibitions')}>exhibition</p>
-          <p>news</p>
+          <p onClick={() => goToPage('news')}>news</p>
           <p onClick={() => goToPage('brands')}>brands</p>
           <p onClick={() => goToPage('about_us')}>about us</p>
         </MenuBox>

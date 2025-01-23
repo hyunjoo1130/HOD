@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { ImageContainer } from '../CommonStyles';
 import exhibitionPoster from '../../assets/Images/ExhibitionDetail_Img/POSTER.jpg';

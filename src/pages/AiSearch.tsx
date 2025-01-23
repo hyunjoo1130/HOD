@@ -1,32 +1,34 @@
-import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
+import { ChangeEvent, KeyboardEvent, useState } from 'react';
 import styled from 'styled-components';
 import ExhibitionNavigation from '../components/ExhibitionNavigation';
 import { CallGPT } from '../api/gpt';
 import searchIcon from '../assets/icons/AI SEARCH ICON.png';
 import backgroundImg from '../assets/Images/AiSearch_Img/dojagi-bg.png';
 import { useRecoilState } from 'recoil';
-import { gptAnswerState } from '../state/atoms';
+import { gptAnswerState, gptLoadingState } from '../state/atoms';
 
 const AiSearch = () => {
   const [prompt, setPrompt] = useState('');
   const [gptAnswer, setGptAnswer] = useRecoilState(gptAnswerState);
-  const [loading, setLoading] = useState(false);
+  const [gptLoading, setGptLoading] = useRecoilState(gptLoadingState);
 
-  console.log(gptAnswer);
+  console.log('gptAnswer => ', gptAnswer);
+  console.log('gptLoading => ', gptLoading);
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     setPrompt(e.target.value);
   };
 
   const handleSubmit = async () => {
-    setLoading(true);
+    setGptLoading(true);
+    setGptAnswer([]);
     try {
       const response = await CallGPT(prompt);
       setGptAnswer(response);
     } catch (error) {
       console.log('에러발생 : ', error);
     } finally {
-      setLoading(false);
+      setGptLoading(false);
     }
   };
 
@@ -42,12 +44,10 @@ const AiSearch = () => {
         <img src={backgroundImg} alt="도자기 배경" width="40%" />
       </Background>
       <ExhibitionNavigation linkColor="black" />
-      {loading ? (
-        // 로딩스크린
+      {gptLoading && !gptAnswer[0] && (
         <QuestionWrapper>...loading</QuestionWrapper>
-      ) : gptAnswer[0] ? (
-        // 답변스크린
-        // ⭐️답변스크린부터 퍼블리싱하기
+      )}
+      {gptAnswer[0] && (
         <AnswerWrapper>
           <Title>
             <h1>ask a question</h1>
@@ -67,8 +67,9 @@ const AiSearch = () => {
             </SearchIconBox>
           </RequestionInput>
         </AnswerWrapper>
-      ) : (
-        // 기존스크린
+      )}
+      {/* 기존 스크린 */}
+      {!gptLoading && !gptAnswer[0] && (
         <QuestionWrapper>
           <Title>
             <h1>ai search engine</h1>

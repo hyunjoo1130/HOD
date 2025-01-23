@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import exhibitionImage01 from '../../assets/Images/ExhibitionDetail_Img/Detail01.jpg';
 import exhibitionImage02 from '../../assets/Images/ExhibitionDetail_Img/Detail02.jpg';

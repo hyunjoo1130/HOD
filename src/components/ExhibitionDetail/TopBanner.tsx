@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import backgroundImage from '../../assets/Images/ExhibitionDetail_Img/MAIN.jpg';
 import logo from '../../assets/Images/Global_Img/logos/홋2_w.png';

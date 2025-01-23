@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import productImage01 from '../../assets/Images/BrandDetail_Img/image04.jpg';
 import productImage02 from '../../assets/Images/BrandDetail_Img/image05.jpg';

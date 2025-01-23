@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import image03 from '../../assets/Images/AboutUs_Img/image03.jpg';
-import { ImageContainer } from '../CommonStyles';
 
 const OurMissionSection = () => {
   return (

@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import ExhibitionNavigation from '../ExhibitionNavigation';
 import backgroundImage from '../../assets/Images/Brands_Img/BANNER.jpg';

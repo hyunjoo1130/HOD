@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { ImageContainer, MoreButton } from '../CommonStyles';
 import { BrandsData } from '../../types/dataTypes';

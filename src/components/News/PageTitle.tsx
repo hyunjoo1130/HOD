@@ -3,12 +3,9 @@ import styled from 'styled-components';
 const PageTitle = () => {
   return (
     <PageTitleContainer>
-      <h1>brands</h1>
+      <h1>news</h1>
       <p>
-        매주 하우스 오브 도자기에서 독특한 한국 도자기 브랜드를 소개하고
-        있습니다. 인기 있는 브랜드는 물론, 신진 브랜드들도 함께 만나보실 수
-        있습니다. 각 브랜드의 독특한 매력을 느끼시고, 이곳에서 여러분의 다음
-        애정 브랜드를 찾아보세요!
+        전통 도자기와 현대 도자기 문화에 관한 모든 정보를 한 곳에서 만나보세요.
       </p>
     </PageTitleContainer>
   );

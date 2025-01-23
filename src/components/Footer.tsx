@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { ImageContainer } from './CommonStyles';
 import logo from '../assets/Images/Global_Img/logos/HOUSE OF DOJAGI.png';
@@ -26,7 +25,7 @@ const Footer = () => {
           <MenuBox>
             <p onClick={() => goToPage('ai_search')}>ai search</p>
             <p onClick={() => goToPage('exhibitions')}>exhibition</p>
-            <p>news</p>
+            <p onClick={() => goToPage('news')}>news</p>
             <p onClick={() => goToPage('brands')}>brands</p>
             <p onClick={() => goToPage('about_us')}>about us</p>
           </MenuBox>

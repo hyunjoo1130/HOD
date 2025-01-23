@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { ImageContainer } from '../CommonStyles';
 import introImage01 from '../../assets/Images/BrandDetail_Img/image01.jpg';
