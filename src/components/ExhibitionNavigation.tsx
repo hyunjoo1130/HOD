@@ -18,15 +18,6 @@ const ExhibitionNavigation: React.FC<ExhibitionNavigationProps> = ({
   const pathnames = location.pathname.split('/').slice(1);
   const queryParams = new URLSearchParams(location.search);
   const myParam = queryParams.get('name');
-  const [exhibitionData, setExhibitionData] = useState<ExhibitionData[]>([]);
-
-  // console.log('pathnames => ', pathnames);
-  // console.log('queryParams => ', queryParams);
-  // console.log('myParam => ', myParam);
-
-  useEffect(() => {
-    fetchExhibitionData(setExhibitionData);
-  }, []);
 
   const goToLink = (link: string) => {
     navigate(link);

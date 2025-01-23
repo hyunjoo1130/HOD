@@ -11,6 +11,8 @@ const TopView = () => {
   const [hoverHistory, setHoverHistory] = useState<number[]>([]);
   const posterImg = [poster1, poster2, poster3, poster4, poster5];
 
+  console.log(activeIndex);
+
   const handleMouseEnter = (index: number) => {
     const newHistory = hoverHistory.filter((i) => i !== index);
 

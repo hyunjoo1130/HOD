@@ -4,14 +4,14 @@ import borderBg from '../../assets/Images/Home_Img/QUESTION SECTION BORDER.png';
 import searchIcon from '../../assets/icons/AI SEARCH ICON.png';
 import { CallGPT } from '../../api/gpt';
 import { useNavigate } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import { gptAnswerState, gptLoadingState } from '../../state/atoms';
 
 const Question = () => {
   const navigate = useNavigate();
   const [prompt, setPrompt] = useState('');
-  const [gptAnswer, setGptAnswer] = useRecoilState(gptAnswerState);
-  const [gptLoading, setGptLoading] = useRecoilState(gptLoadingState);
+  const setGptAnswer = useSetRecoilState(gptAnswerState);
+  const setGptLoading = useSetRecoilState(gptLoadingState);
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     setPrompt(e.target.value);
