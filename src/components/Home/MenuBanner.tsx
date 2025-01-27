@@ -2,11 +2,24 @@ import styled from 'styled-components';
 import exhibitionBg from '../../assets/Images/Home_Img/EXHIBITION.jpg';
 import newsBg from '../../assets/Images/Home_Img/NEWS.jpg';
 import brandsBg from '../../assets/Images/Home_Img/BRANDS.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const MenuBanner = () => {
+  const navigate = useNavigate();
+
+  const goToPage = (link: string) => {
+    navigate(`/${link}`);
+  };
+
   return (
     <MenuBannerContainer>
-      <MenuBannerBox left="0" top="0" width="50%" height="960px">
+      <MenuBannerBox
+        left="0"
+        top="0"
+        width="50%"
+        height="960px"
+        onClick={() => goToPage('exhibitions')}
+      >
         <MenuBannerImage backgroundImage={exhibitionBg} />
         <Title height="960px">
           <span>전시회 자세히 보기</span>
@@ -14,7 +27,13 @@ const MenuBanner = () => {
         </Title>
         <OpacityBox left="0" top="0" width="100%" height="960px" />
       </MenuBannerBox>
-      <MenuBannerBox left="50%" top="0" width="50%" height="480px">
+      <MenuBannerBox
+        left="50%"
+        top="0"
+        width="50%"
+        height="480px"
+        onClick={() => goToPage('news')}
+      >
         <MenuBannerImage backgroundImage={newsBg} />
         <Title height="480px">
           <span>최신 소식 확인하기</span>
@@ -22,7 +41,13 @@ const MenuBanner = () => {
         </Title>
         <OpacityBox left="960px" top="0" width="960px" height="480px" />
       </MenuBannerBox>
-      <MenuBannerBox left="50%" bottom="0" width="50%" height="480px">
+      <MenuBannerBox
+        left="50%"
+        bottom="0"
+        width="50%"
+        height="480px"
+        onClick={() => goToPage('brands')}
+      >
         <MenuBannerImage backgroundImage={brandsBg} />
         <Title height="480px">
           <span>추천 브랜드 살펴보기</span>

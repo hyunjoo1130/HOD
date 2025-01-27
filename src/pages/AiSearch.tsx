@@ -1,4 +1,4 @@
-import { ChangeEvent, KeyboardEvent, useState } from 'react';
+import { ChangeEvent, KeyboardEvent, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ExhibitionNavigation from '../components/ExhibitionNavigation';
 import { CallGPT } from '../api/gpt';
@@ -6,14 +6,20 @@ import searchIcon from '../assets/icons/AI SEARCH ICON.png';
 import backgroundImg from '../assets/Images/AiSearch_Img/dojagi-bg.png';
 import { useRecoilState } from 'recoil';
 import { gptAnswerState, gptLoadingState } from '../state/atoms';
+import Loading from '../components/AiSearch/Loading';
+import { toTop } from '../utils/toTop';
 
 const AiSearch = () => {
   const [prompt, setPrompt] = useState('');
   const [gptAnswer, setGptAnswer] = useRecoilState(gptAnswerState);
   const [gptLoading, setGptLoading] = useRecoilState(gptLoadingState);
 
-  console.log('gptAnswer => ', gptAnswer);
-  console.log('gptLoading => ', gptLoading);
+  // console.log('gptAnswer => ', gptAnswer);
+  // console.log('gptLoading => ', gptLoading);
+
+  useEffect(() => {
+    toTop();
+  }, []);
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     setPrompt(e.target.value);
@@ -44,10 +50,9 @@ const AiSearch = () => {
         <img src={backgroundImg} alt="도자기 배경" width="40%" />
       </Background>
       <ExhibitionNavigation linkColor="black" />
-      {gptLoading && !gptAnswer[0] && (
-        <QuestionWrapper>...loading</QuestionWrapper>
-      )}
+      {gptLoading && !gptAnswer[0] && <Loading />}
       {gptAnswer[0] && (
+        // 답변 스크린
         <AnswerWrapper>
           <Title>
             <h1>ask a question</h1>
@@ -86,6 +91,7 @@ const AiSearch = () => {
             </SearchIconBox>
           </QuestionInput>
         </QuestionWrapper>
+        // <Loading />
       )}
     </AiSearchContainer>
   );

@@ -3,8 +3,14 @@ import TopBanner from '../components/Brands/TopBanner';
 import PageTitle from '../components/Brands/PageTitle';
 import MainBrands from '../components/Brands/MainBrands';
 import OtherBrands from '../components/Brands/OtherBrands';
+import { useEffect } from 'react';
+import { toTop } from '../utils/toTop';
 
 const Brands = () => {
+  useEffect(() => {
+    toTop();
+  }, []);
+
   return (
     <BrandsContainer>
       {/* top banner */}
