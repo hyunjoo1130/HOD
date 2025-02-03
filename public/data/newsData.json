@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "thumbnail": "/src/assets/Images/News_Img/화이트스톤.jpg",
+    "thumbnail": "/images/화이트스톤.jpg",
     "title": "[전시 프리뷰] 화이트스톤 갤러리 갑빠오 개인전 'NO BOUNDARY'",
     "subTitle": "",
     "writer": "",
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "thumbnail": "/src/assets/Images/News_Img/사기 역사적 가치.jpg",
+    "thumbnail": "/images/사기 역사적 가치.jpg",
     "title": "사기 역사적 가치·사기장 삶 조명하다",
     "subTitle": "",
     "writer": "",
@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "thumbnail": "/src/assets/Images/News_Img/다양한 화훼상품 개발.jpg",
+    "thumbnail": "/images/다양한 화훼상품 개발.jpg",
     "title": "[유통가 사람들] 다양한 화훼상품 개발…“꽃 소비 인식 개선 노력”",
     "subTitle": "",
     "writer": "",
@@ -25,7 +25,7 @@
   },
   {
     "id": 4,
-    "thumbnail": "/src/assets/Images/News_Img/분청과 백자의 만남.jpg",
+    "thumbnail": "/images/분청과 백자의 만남.jpg",
     "title": "분청과 백자의 만남…도예가 정갑용 '내가 빚은 대로 생겨난다'展",
     "subTitle": "3월3일까지 청도 갤러리이서",
     "writer": "임훈",
@@ -34,7 +34,7 @@
   },
   {
     "id": 5,
-    "thumbnail": "/src/assets/Images/News_Img/박물관, 문턱을 낮추다.jpg",
+    "thumbnail": "/images/박물관, 문턱을 낮추다.jpg",
     "title": "[이슈&스토리] 박물관, 문턱을 낮추다… 오감으로 느끼는 ‘무장애 전시들’",
     "subTitle": "만져, 보다… 들어, 보다… 장애를 넘어, 보다",
     "writer": "구민주",
@@ -43,7 +43,7 @@
   },
   {
     "id": 6,
-    "thumbnail": "/src/assets/Images/News_Img/코엑스 공예트렌드.jpg",
+    "thumbnail": "/images/코엑스 공예트렌드.jpg",
     "title": "여주시, 코엑스 공예트렌드페어 참가",
     "subTitle": "국내 최대 공예 박람회서 여주 도자기 우수성 홍보",
     "writer": "박관우",
@@ -52,7 +52,7 @@
   },
   {
     "id": 7,
-    "thumbnail": "/src/assets/Images/News_Img/부용화달력접시.jpg",
+    "thumbnail": "/images/부용화달력접시.jpg",
     "title": "한국도자기, 2025년 을사년 ‘부용화달력접시’로 행운 기원",
     "subTitle": "한국도자기(대표 김영신)가 2025년 을사년 ‘푸른 뱀의 해’를 맞아 ‘부용화달력접시’를 출시했다고 밝혔다",
     "writer": "이동희",
